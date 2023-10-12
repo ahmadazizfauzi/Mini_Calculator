@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator SEDERHANA</title>
+
+    <link rel="stylesheet" href="dist/output.css" />
+  </head>
+  <body>
+    <div id="calculator" class="pt-20 w-[80%] mx-auto bg-blue-300">
+      <input
+        type="text"
+        id="display"
+        readonly
+        class="border-2 border-black border-solid w-full"
+      />
+      <div>
+        <div class="flex justify-between">
+          <button onclick="clearDisplay()" class="kotak">C</button>
+          <button onclick="toDisplay()" class="kotak">🔙</button>
+          <button onclick="toDisplay('%')" class="kotak">%</button>
+          <button onclick="toDisplay('/')" class="kotak text-orange-400">
+            /
+          </button>
+          <!-- <button onclick="calcuResult('=')" class="kotak text-orange-400">
+            =
+          </button> -->
+        </div>
+        <div class="flex justify-between">
+          <button onclick="toDisplay('7')" class="kotak">7</button>
+          <button onclick="toDisplay('8')" class="kotak">8</button>
+          <button onclick="toDisplay('9')" class="kotak">9</button>
+          <button onclick="toDisplay('*')" class="kotak text-orange-400">
+            X
+          </button>
+          <!-- <button onclick="calcuResult('=')" class="kotak text-orange-400">
+            =
+          </button> -->
+        </div>
+        <div class="flex justify-between">
+          <button onclick="toDisplay('4')" class="kotak">4</button>
+          <button onclick="toDisplay('5')" class="kotak">5</button>
+          <button onclick="toDisplay('6')" class="kotak">6</button>
+          <button onclick="toDisplay('-')" class="kotak text-orange-400">
+            -
+          </button>
+        </div>
+        <div class="flex justify-between">
+          <button onclick="toDisplay('1')" class="kotak">1</button>
+          <button onclick="toDisplay('2')" class="kotak">2</button>
+          <button onclick="toDisplay('3')" class="kotak">3</button>
+          <button onclick="toDisplay('+')" class="kotak text-orange-400">
+            +
+          </button>
+        </div>
+        <div class="flex justify-between">
+          <button onclick="toDisplay('1')" class="kotak">1</button>
+          <button onclick="toDisplay('0')" class="kotak">0</button>
+          <button onclick="toDisplay('.')" class="kotak">.</button>
+          <button onclick="calcuResult()" class="kotak text-orange-400">
+            =
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toDisplay(value) {
+        document.getElementById("display").value += `${value} `;
+      }
+
+      function clearDisplay() {
+        document.getElementById("display").value = "";
+      }
+
+      function calcuResult() {
+        const displayValue = document.getElementById("display").value;
+        try {
+          const result = Function(`return (` + displayValue + `)`)();
+          document.getElementById("display").value = result;
+        } catch (error) {
+          document.getElementById("display").value = "Error";
+        }
+      }
+    </script>
+    <script></script>
+  </body>
+</html>

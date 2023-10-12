@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MATRIKS</title>
+  </head>
+  <body>
+    <label for="input">Masukkan baris</label>
+    <input type="text" id="input" class="border-2 border-solid border-black" />
+    <button
+      id="button"
+      class="p-3 bg-blue-400 text-white font-bold hover:bg-blue-700"
+    >
+      Klik disini
+    </button>
+    <div id="display"></div>
+
+    <script>
+      const button = document.getElementById("button");
+      const display = document.getElementById("display");
+      const input = document.getElementById("input");
+
+      button.addEventListener("click", function () {
+        console.log("button diklik");
+        console.log(input.value);
+        display.innerHTML = ""; // Kosongkan isi elemen display sebelum menambahkan kotak
+
+        for (let i = 0; i < parseInt(input.value); i++) {
+          const kotak = document.createElement("input");
+          kotak.type = "number";
+          kotak.classList.add("border-solid");
+          kotak.classList.add("border-2");
+          kotak.classList.add("border-blue-500");
+          kotak.classList.add("w-10");
+          kotak.maxLength = 1;
+
+          kotak.addEventListener("input", function () {
+            if (kotak.value.length > 1) {
+              kotak.value = kotak.value.slice(0, 1); // Potong jika ada lebih dari satu digit
+            }
+          });
+
+          display.appendChild(kotak);
+        }
+      });
+    </script>
+  </body>
+</html>
