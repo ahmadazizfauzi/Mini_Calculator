@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="dist/output.css" />
   </head>
   <body class="bg-gray-100">
-    <div id="calculator" class="rounded-lg bg-white w-[80%] mx-auto shadow-2xl px-5 py-10 mt-16 sm:w-[50%]">
+    <div
+      id="calculator"
+      class="rounded-lg bg-white w-[80%] mx-auto shadow-2xl px-5 py-10 mt-16 sm:w-[50%]"
+    >
       <input
         type="text"
         id="display"
@@ -18,7 +21,7 @@
       <div>
         <div class="flex justify-between">
           <button onclick="clearDisplay()" class="kotak">C</button>
-          <button onclick="toDisplay()" class="kotak">🔙</button>
+          <button onclick="removeNumber()" class="kotak">🔙</button>
           <button onclick="toDisplay('%')" class="kotak">%</button>
           <button onclick="toDisplay('/')" class="kotak text-orange-400">
             /
@@ -67,7 +70,7 @@
 
     <script>
       function toDisplay(value) {
-        document.getElementById("display").value += `${value} `;
+        document.getElementById("display").value += `${value}`;
       }
 
       function clearDisplay() {
@@ -81,6 +84,14 @@
           document.getElementById("display").value = result;
         } catch (error) {
           document.getElementById("display").value = "Error";
+        }
+      }
+
+      function removeNumber() {
+        const displayValue = document.getElementById("display").value;
+        if (displayValue.length > 0) {
+          console.log(display)
+          display.value = displayValue.slice(0, -1);
         }
       }
     </script>
