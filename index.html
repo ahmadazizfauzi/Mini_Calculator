@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kalkulator SEDERHANA</title>
+    <title>Kalkulator SEDERHANA BANG</title>
 
     <link rel="stylesheet" href="dist/output.css" />
   </head>
@@ -58,7 +58,7 @@
           </button>
         </div>
         <div class="flex justify-between">
-          <button onclick="" class="kotak">ZZZ</button>
+          <button onclick="showMore()" class="kotak" id="zzz">ZZZ</button>
           <button onclick="toDisplay('0')" class="kotak">0</button>
           <button onclick="toDisplay('.')" class="kotak">.</button>
           <button onclick="calcuResult()" class="kotak text-orange-400">
@@ -67,6 +67,7 @@
         </div>
       </div>
     </div>
+
 
     <script>
       function toDisplay(value) {
@@ -90,9 +91,19 @@
       function removeNumber() {
         const displayValue = document.getElementById("display").value;
         if (displayValue.length > 0) {
-          console.log(display)
+          console.log(display);
           display.value = displayValue.slice(0, -1);
         }
+      }
+
+      function showMore() {
+        this.addEventListener("click", function () {
+          const kotak = document.querySelectorAll(".kotak");
+          for (const element of kotak) {
+            element.classList.toggle("kotak");
+            element.classList.toggle("showMore");
+          }
+        });
       }
     </script>
     <script></script>

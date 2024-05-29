@@ -637,6 +637,31 @@ video {
   background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 
+.showMore {
+  margin-left: 0.125rem;
+  margin-right: 0.125rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 25%;
+  border-width: 2px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+  padding: 0.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.showMore:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+
 /* .kotak {
     @apply w-4 h-4 bg-gray-400
 } */

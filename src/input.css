@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 .kotak {
-    @apply w-[30%] p-3 bg-gray-300 hover:bg-gray-600 transition-all duration-500 border-2 border-solid border-gray-400 mx-0.5 my-2 text-2xl
+  @apply w-[30%] p-3 bg-gray-300 hover:bg-gray-600 transition-all duration-500 border-2 border-solid border-gray-400 mx-0.5 my-2 text-2xl;
+}
 
+.showMore {
+  @apply w-[25%] p-3 bg-gray-600 hover:bg-gray-600 transition-all duration-500 border-2 border-solid border-gray-400 mx-0.5 my-2 text-2xl;
 }
 
 /* .kotak {
